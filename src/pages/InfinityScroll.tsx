@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import "./App.css"
+import "./InfinityScroll.css"
 
-function App() {
+export const InfinityScroll = () => {
   const [listItem, setListItem] = useState<Array<string>>([])
   const [lastIndex, setLastIndex] = useState(1)
   const [isLoading, setLoading] = useState(false)
@@ -85,5 +85,3 @@ function App() {
     </div>
   )
 }
-
-export default App
