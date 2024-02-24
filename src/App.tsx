@@ -77,6 +77,7 @@ function App() {
                 </li>
               )
             })}
+            {isLoading ? <div className="loader" /> : ""}
           </ul>
         </div>
         <button onClick={getListItem}>Add List Item</button>
