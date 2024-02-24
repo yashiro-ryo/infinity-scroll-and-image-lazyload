@@ -14,5 +14,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // セミコロンは禁止
+    "semi": [2, "never"],
   },
 }

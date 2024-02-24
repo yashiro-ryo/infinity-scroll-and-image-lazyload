@@ -1,64 +1,62 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { useEffect, useState } from "react"
+import "./App.css"
 
 function App() {
-  const [listItem, setListItem] = useState<Array<string>>([]);
-  const [lastIndex, setLastIndex] = useState(1);
-  const [isLoading, setLoading] = useState(false);
-  const [firstItemLoaded, setFirstItemLoaded] = useState(false);
-  const PER_LIST_ITEM = 20;
-  const READ_MORE_MARGIN = 60;
+  const [listItem, setListItem] = useState<Array<string>>([])
+  const [lastIndex, setLastIndex] = useState(1)
+  const [isLoading, setLoading] = useState(false)
+  const [firstItemLoaded, setFirstItemLoaded] = useState(false)
+  const PER_LIST_ITEM = 20
+  const READ_MORE_MARGIN = 60
 
   useEffect(() => {
     if (!firstItemLoaded) {
-      getListItem();
+      getListItem()
     }
-  }, []);
+  }, [])
 
   const getListItem = () => {
     if (isLoading) {
-      return;
+      return
     }
-    setLoading(true);
+    setLoading(true)
     // API request を想定
     setTimeout(() => {
-      const addedListItem = listItem.concat(createItem());
-      setListItem(addedListItem);
-      setLastIndex(lastIndex + PER_LIST_ITEM);
-      setLoading(false);
-      setFirstItemLoaded(true);
-    }, 500);
-  };
+      const addedListItem = listItem.concat(createItem())
+      setListItem(addedListItem)
+      setLastIndex(lastIndex + PER_LIST_ITEM)
+      setLoading(false)
+      setFirstItemLoaded(true)
+    }, 500)
+  }
 
   const createItem = (): Array<string> => {
     // ダミーリストアイテムを生成
-    const array = [];
+    const array = []
     for (let i = lastIndex; i < lastIndex + PER_LIST_ITEM; i++) {
-      array.push(`item-${i}`);
+      array.push(`item-${i}`)
     }
-    return array;
-  };
+    return array
+  }
 
   const onScroll = () => {
-    loadMoreIfNeed();
-  };
+    loadMoreIfNeed()
+  }
 
   const loadMoreIfNeed = () => {
     // リスト最後の要素を取得
-    const bottomListItem = document.getElementById(
-      `list-item-${lastIndex - 1}`
-    );
+    const bottomListItem = document.getElementById(`list-item-${lastIndex - 1}`)
     if (bottomListItem === null) {
-      return;
+      return
     }
     // タイトル部分 + スクロール表示部の高さ + リスト1つ分
     if (
       500 + 100 + READ_MORE_MARGIN >
       bottomListItem.getBoundingClientRect().top
     ) {
-      getListItem();
+      getListItem()
     }
-  };
+  }
 
   return (
     <div>
@@ -77,14 +75,14 @@ function App() {
                 >
                   {item}
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
         <button onClick={getListItem}>Add List Item</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
