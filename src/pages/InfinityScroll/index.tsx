@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./InfinityScroll.css"
+import "./style.css"
 
 export const InfinityScroll = () => {
   const [listItem, setListItem] = useState<Array<string>>([])

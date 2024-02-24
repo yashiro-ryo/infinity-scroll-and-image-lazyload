@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { InfinityScroll } from "./pages/InfinityScroll"
-import { Lazyload } from "./pages/Lazyload"
+import { InfinityScroll } from "./pages/InfinityScroll/index"
+import { Lazyload } from "./pages/Lazyload/index"
 import { Index } from "./pages/Index"
 
 const router = createBrowserRouter([
