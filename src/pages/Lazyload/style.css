@@ -1,0 +1,27 @@
+.body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 700px;
+  border: 1px solid #000;
+}
+
+.container-row {
+  padding: 10px;
+  display: flex;
+}
+
+.img-wrapper {
+  width: 150px;
+  height: 150px;
+  background-color: #636363;
+  margin: 10px;
+}
+
+.img-spacer {
+  width: 20px;
+  height: 150px;
+}
