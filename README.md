@@ -15,7 +15,7 @@
 ### コードの取得
 
 ```bash
-git clone ****
+git clone git@github.com:yashiro-ryo/infinity-scroll-and-image-lazyload.git
 ```
 
 ### 依存ライブラリのインストール
