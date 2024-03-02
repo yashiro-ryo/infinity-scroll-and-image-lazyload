@@ -8,6 +8,16 @@
 
 画像遅延読み込みは、スクロールして画像がビューポートに入った時点で画像のロードを行うように実装しました。
 
+## 画面のスクショ
+
+### 無限スクロール
+
+<img src="https://github.com/yashiro-ryo/infinity-scroll-and-image-lazyload/blob/main/assets/infinity-scroll.png?raw=true" />
+
+### 画像遅延読み込み
+
+<img src="https://github.com/yashiro-ryo/infinity-scroll-and-image-lazyload/blob/main/assets/lazyload.png?raw=true" />
+
 ## 起動方法
 
 [node.js](https://nodejs.org/en)が必要です。
