@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Infinity Scroll And Image LazyLoad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## これは何?
 
-Currently, two official plugins are available:
+無限スクロールと画像遅延読み込みをReactで実装したものです。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+無限スクロールはリスト下部までスクロールすると追加で要素を取得して、リスト下部に要素を追加することで無限スクロールを実装しています。
 
-## Expanding the ESLint configuration
+画像遅延読み込みは、スクロールして画像がビューポートに入った時点で画像のロードを行うように実装しました。
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 起動方法
 
-- Configure the top-level `parserOptions` property like this:
+[node.js](https://nodejs.org/en)が必要です。
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### コードの取得
+
+```bash
+git clone ****
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 依存ライブラリのインストール
+
+```bash
+yarn
+```
+
+### 起動
+
+```bash
+yarn dev
+```
+
+### ビルド
+
+```bash
+yarn build
+```
+
+## デモサイト
+準備中
