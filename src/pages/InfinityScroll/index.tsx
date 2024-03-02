@@ -8,6 +8,8 @@ export const InfinityScroll = () => {
   const [firstItemLoaded, setFirstItemLoaded] = useState(false)
   const PER_LIST_ITEM = 20
   const READ_MORE_MARGIN = 60
+  let lastCalledAt = Date.now()
+  const INTERVAL = 50
 
   useEffect(() => {
     if (!firstItemLoaded) {
@@ -39,8 +41,14 @@ export const InfinityScroll = () => {
     return array
   }
 
-  const onScroll = () => {
-    loadMoreIfNeed()
+  const onScroll = () => loadMoreIfNeed()
+
+  const throttle = () => {
+    const nowTime = Date.now()
+    if (lastCalledAt + INTERVAL < nowTime) {
+      onScroll()
+      lastCalledAt = Date.now()
+    }
   }
 
   const loadMoreIfNeed = () => {
@@ -64,7 +72,7 @@ export const InfinityScroll = () => {
         <h1>Scroll Lazyload</h1>
       </div>
       <div>
-        <div className="list-container" onScroll={onScroll}>
+        <div className="list-container" onScroll={throttle}>
           <ul className="list-group">
             {listItem.map((item, index) => {
               return (
@@ -80,7 +88,6 @@ export const InfinityScroll = () => {
             {isLoading ? <div className="loader" /> : ""}
           </ul>
         </div>
-        <button onClick={getListItem}>Add List Item</button>
       </div>
     </div>
   )
